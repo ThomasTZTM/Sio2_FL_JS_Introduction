@@ -80,3 +80,33 @@ nombresSup10Filter.forEach(nombre => console.log(nombre))
 nombres
     .filter(nombre=> nombre>10)
     .forEach(nombre => console.log(nombre))
+
+// 10. Récupérer dans un tableau les nombres à la puissance 2 et les afficher
+let nombrePuissance2 = []
+for(let nombre of nombres) {
+    nombrePuissance2.push(nombre**2)
+}
+console.log(" - Ex 10 :")
+nombrePuissance2.forEach(nombre => console.log(nombre))
+
+// 10.1 Version simplifié
+console.log(" - Ex 10.1 :")
+nombres
+    .map((x) => x ** 2)
+    .forEach(nombre => console.log(nombre))
+
+// 11. Afficher les prix ttc supérieur à 100 avec TVA 20%
+const prixHT = [15,18,26,89,75,125]
+console.log(" - Ex 11 :")
+prixHT
+    .map((x) => x*1.20)
+    .filter(prixTTC => prixTTC>100)
+    .forEach(prixTTC => console.log(prixTTC))
+
+// 12. Calculer fficher la somme des prix TTC
+const prixHT2 = [15,18,26,89,75,125]
+console.log(" - Ex 12 :")
+let sommeTTC = prixHT2
+    .map((x) => x*1.20)
+    .reduce((somme, prixTTC) => somme + prixTTC, 0)
+console.log(sommeTTC)
