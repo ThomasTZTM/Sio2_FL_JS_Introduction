@@ -54,11 +54,69 @@ personnes
 
 // 7. Calculer et afficher la moyenne d'age des personnes
 console.log("Ex 7 : Calculer et afficher la moyenne d'age des personnes")
-let moyenneAge = personnes
-    .filter(elt => elt.age)
-    .reduce((somme, age) => somme + age, 0)
-console.log(moyenneAge)
+let moyenne = 0
+personnes.forEach(elt => moyenne=moyenne+elt.age)
+console.log(moyenne/personnes.length)
 
 // 8. Ajouter une nouvelle personne
+console.log("Ex 8 : Ajouter une nouvelle personne")
 personnes.push({prenom: "Daniel", nom: "Ilod", age: "18"})
 console.log(personnes[3])
+
+// 9. Trouver la personne la plus agée
+console.log("Ex 9 : Trouver la personne la plus agée")
+const vieux = personnes.reduce((vieux, age) => (age.age > vieux.age ? age : vieux));
+console.log("Le plus âgé est : ", vieux);
+
+let personneplusagee = personnes[0]
+personnes
+    .reduce((personneplusagee, personne)=>{
+        if (personne.age > personneplusagee.age ){
+            return personne
+        }
+    return personneplusagee
+},personnes[0])
+
+// 10. Lister les prénoms triés par ordre alphabétique
+console.log("Ex 10 : Lister les prénoms triés par ordre alphabétique")
+const nomperso = []
+personnes
+    .forEach(personne => nomperso.push(personne.prenom))
+const nompersotrier = nomperso.sort()
+console.log(nompersotrier)
+
+// 11. Compter le nombre de mineur et de majeur
+console.log("Ex 11 : Trouver la personne la plus agée")
+const tabage = []
+personnes
+    .forEach(personne => tabage.push(personne.age))
+let cptmaj = 0
+let cptmin = 0
+for (let item of tabage){
+    if (item>=18) {
+        cptmaj = cptmaj + 1
+    }else{
+        cptmin = cptmin + 1
+    }
+}
+console.log("Il y a "+cptmin+" mineur(s). Et "+cptmaj+" majeur(s)")
+
+// 12. Vérifier si tout le monde est majeur
+console.log("Ex 12 : Trouver la personne la plus agée")
+if (cptmin>0){
+    console.log("Il y a des mineurs")
+}else{
+    console.log("Tout le monde est mineur")
+}
+
+// 13. Recherche une personne par prénom
+console.log("Ex 13 : Recherche une personne par prénom")
+
+// 14. Supprimer une personne spécifique par son nom
+console.log("Ex 14 : Supprimer une personne spécifique par son nom")
+
+// 15. Trouver l'age moyen des personnes majeures
+console.log("Ex 15 : Trouver l'age moyen des personnes majeures")
+
+// 16. Vérifier si au moins une personne a un prénom commençant par 'J'
+console.log("Ex 16 : Vérifier si au moins une personne a un prénom commençant par 'J'")
