@@ -151,11 +151,11 @@ if (toutLeMondeMajeur){
 // 13. Recherche une personne par prénom
 console.log("Ex 13 : Recherche une personne par prénom")
 
-// 14. Supprimer une personne spécifique par son nom
+// 14. Supprimer une personne spécifique par son nom (utiliser slice)
 console.log("Ex 14 : Supprimer une personne spécifique par son nom")
 
 // 15. Trouver l'age moyen des personnes majeures
 console.log("Ex 15 : Trouver l'age moyen des personnes majeures")
 
-// 16. Vérifier si au moins une personne a un prénom commençant par 'J'
+// 16. Vérifier si au moins une personne a un prénom commençant par 'J' (utiliser some)
 console.log("Ex 16 : Vérifier si au moins une personne a un prénom commençant par 'J'")
