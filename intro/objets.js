@@ -85,6 +85,11 @@ personnes
 const nompersotrier = nomperso.sort()
 console.log(nompersotrier)
 
+personnes
+    .map(personne => personne.prenom)
+    .sort()
+    .forEach(personne => console.log(personne))
+
 // 11. Compter le nombre de mineur et de majeur
 console.log("Ex 11 : Trouver la personne la plus agée")
 const tabage = []
@@ -101,12 +106,46 @@ for (let item of tabage){
 }
 console.log("Il y a "+cptmin+" mineur(s). Et "+cptmaj+" majeur(s)")
 
+console.log("Ex 11 : Correction")
+
+const perso11 = personnes.reduce((acc, personne) => {
+    if (personne.age < 18) {
+        acc.mineurs++;
+    } else {
+        acc.majeurs++;
+    }
+    return acc;
+}, {mineurs: 0, majeurs: 0});
+
+console.log("Nombre de mineurs : "+perso11.mineurs);
+console.log("Nombre de majeurs : "+perso11.majeurs);
+
+console.log("Ex 11 : Correction 2 (Ternaire)")
+
+const resultat = personnes.reduce((acc, personne) => {
+    personne.age >= 18 ? acc.majeurs ++ : acc.mineurs ++
+    return acc;
+}, {mineurs: 0, majeurs: 0});
+
+console.log("Nombre de mineurs : "+resultat.mineurs);
+console.log("Nombre de majeurs : "+resultat.majeurs);
+
+
 // 12. Vérifier si tout le monde est majeur
-console.log("Ex 12 : Trouver la personne la plus agée")
-if (cptmin>0){
+console.log("Ex 12 : Vérifier si tout le monde est majeur")
+if (perso11.mineurs>0){
     console.log("Il y a des mineurs")
 }else{
     console.log("Tout le monde est mineur")
+}
+
+console.log("Ex 12 : Correction")
+
+let toutLeMondeMajeur = personnes.every(personne => personne.age >= 18)
+if (toutLeMondeMajeur){
+    console.log("Toutes les personnes sont majeurs")
+}else{
+    console.log("Au moins une personne est mineurs ")
 }
 
 // 13. Recherche une personne par prénom
