@@ -20,14 +20,14 @@ personnes.forEach(personne =>{
     // 1
     const li = document.createElement('li')
     // 2
-    li.textContent = `Prénom : ${personne.prenom}, Nom : ${personne.nom}, Age : ${personne.age}`
+    li.textContent = `Prénom : ${personne.prenom}, Nom : ${personne.nom}, Age : ${personne.age}` // Template Literal
     // 3
     ulListePersonnes.appendChild(li)
     })
 
 // Récupérer tous les 'li' de l'élément ul (id=list)
 
-const liElements = document.querySelectorAll("#list > li")
+const liElements = document.querySelectorAll("#list > li") // Récupère les li dans la liste
 
 // Afficher sur la console
 
